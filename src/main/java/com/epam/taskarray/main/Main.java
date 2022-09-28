@@ -1,9 +1,9 @@
 package com.epam.taskarray.main;
 
 import com.epam.taskarray.entity.CustomArray;
-import com.epam.taskarray.exception.ArrayException;
 import com.epam.taskarray.reader.ArrayFileReader;
 import com.epam.taskarray.service.ArrayService;
+import com.epam.taskarray.writer.ArrayFileWriter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,22 +13,16 @@ import java.time.Instant;
 
 public class Main {
     public static void main(String[] args) {
-// Array ConsoleReader arrayConsoleReader = new ArrayConsoleReader()
-// CustomArray customArray = arrayConsoleReader.readFromConsole()
-//        ArrayFileReader arrayFileReader = new ArrayFileReader();
-//        CustomArray customArray = arrayFileReader.readFromFile("data\\copy1.txt");
-//        System.out.println(customArray);
-//        ArrayService arrayService = new ArrayService();
-//        System.out.println(arrayService.recursiveQuickSort(customArray));
-//        try {
-//            System.out.println(customArray.getElement(7));
-//        } catch (ArrayException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println(arrayService.maxValue(customArray));
-        fileSystem();
-        byte[] value = {65, 67, 100};
-        outputArrayInStream(value);
+        ArrayFileReader arrayFileReader = new ArrayFileReader();
+        CustomArray customArray = arrayFileReader.readFromFile("");
+        System.out.println(customArray);
+        ArrayService arrayService = new ArrayService();
+        System.out.println(arrayService.recursiveQuickSort(customArray));
+
+        System.out.println(customArray);
+        ArrayFileWriter arrayFileWriter = new ArrayFileWriter();
+        arrayFileWriter.customArrayToFile(customArray, "", false);
+
     }
     public static void fileSystem(){
         File file = new File("data" + File.separator + "info.txt");

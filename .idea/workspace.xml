@@ -4,23 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054b8394-6ced-4f33-b95e-edef190d3ac7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/info.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/entity/CustomArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/exception/ArrayException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayConsoleReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ReaderMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/infor.txt" afterDir="false" />
+    <list default="true" id="054b8394-6ced-4f33-b95e-edef190d3ac7" name="Changes" comment="Ready1">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/file/FileMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/writer/ArrayFileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/entity/CustomArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/entity/CustomArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayConsoleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayConsoleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ReaderMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,15 +42,30 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="FileMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.file.FileMain" />
+      <module name="TaskArray" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.taskarray.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.main.Main" />
       <module name="TaskArray" />
@@ -70,6 +82,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.FileMain" />
       </list>
     </recent_temporary>
   </component>
@@ -82,6 +95,21 @@
       <option name="presentableId" value="Default" />
       <updated>1664126805545</updated>
     </task>
+    <task id="LOCAL-00001" summary="Ready1">
+      <created>1664206441162</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664206441162</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ready1">
+      <created>1664206457986</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664206457986</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,5 +122,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ready1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready1" />
   </component>
 </project>

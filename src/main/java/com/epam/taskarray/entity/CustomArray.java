@@ -1,5 +1,6 @@
 package com.epam.taskarray.entity;
 
+import com.epam.taskarray.service.ArrayChecker;
 import com.epam.taskarray.exception.ArrayException;
 
 import java.util.Arrays;
@@ -23,16 +24,12 @@ public class CustomArray {
     }
 
     public int getElement (int index) throws ArrayException {
-        if (index < 0 || index >= array.length){
-            throw new ArrayException("Index out of array bounds");
-        }
+        ArrayChecker.arrayIndexChecker(array, index);
         return array[index];
     }
 
     public void setElement (int value, int index) throws ArrayException {
-        if (index < 0 || index >= array.length){
-            throw new ArrayException("Index out of array bounds");
-        }
+        ArrayChecker.arrayIndexChecker(array, index);
         array[index] = value;
     }
 

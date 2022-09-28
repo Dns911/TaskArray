@@ -1,18 +1,18 @@
 package com.epam.taskarray.reader;
 
 import com.epam.taskarray.entity.CustomArray;
+import com.epam.taskarray.service.ArrayParser;
 
 import java.io.*;
-import java.util.Arrays;
 
 public class ArrayFileReader {
-    public static String DATA_INFO_TXT = "data\\info.txt";
+    public static String DEFAULT_FILE = "data\\info.txt";
 
-    public CustomArray readFromFile(String fileReader) {
+    public CustomArray readFromFile(String fileName) {
         String str = null;
-        File file = new File(fileReader);
+        File file = new File(fileName);
         if (!file.exists()) {
-            file = new File(DATA_INFO_TXT);
+            file = new File(DEFAULT_FILE);
         }
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -22,6 +22,6 @@ public class ArrayFileReader {
         } catch (IOException e) {
             System.err.println(file + " not found");
         }
-        return ReaderMain.convertStringToCustomArray(str);
+        return ArrayParser.parseStringToCustomArray(str);
     }
 }

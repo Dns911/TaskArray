@@ -5,6 +5,7 @@ import com.epam.taskarray.entity.CustomArray;
 public class ArrayService {
     public int minValue (CustomArray arr){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         int min = a[0];
         for (int i = 1; i < a.length; i++){
             if (min > a[i]){
@@ -15,6 +16,7 @@ public class ArrayService {
     }
     public int maxValue (CustomArray arr){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         int max = a[0];
         for (int i = 1; i < a.length; i++){
             if (max < a[i]){
@@ -25,6 +27,7 @@ public class ArrayService {
     }
     public int[] changeIf (CustomArray arr, int findValue, int changeValue){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         for (int i = 1; i < a.length; i++){
             if (a[i] == findValue){
                 a[i] = changeValue;
@@ -34,6 +37,7 @@ public class ArrayService {
     }
     public double average (CustomArray arr){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         int sum = 0;
         for (int i = 1; i < a.length; i++){
             sum += a[i];
@@ -42,6 +46,7 @@ public class ArrayService {
     }
     public int sumArray (CustomArray arr){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         int sum = 0;
         for (int i = 1; i < a.length; i++){
             sum += a[i];
@@ -50,6 +55,7 @@ public class ArrayService {
     }
     public int countPositive (CustomArray arr){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         int count = 0;
         for (int i = 0; i < a.length; i++){
             if (a[i] > 0){
@@ -60,6 +66,7 @@ public class ArrayService {
     }
     public int countNegative (CustomArray arr){
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         int count = 0;
         for (int i = 0; i < a.length; i++){
             if (a[i] < 0){
@@ -70,6 +77,7 @@ public class ArrayService {
     }
     public CustomArray recursiveQuickSort(CustomArray arr) {
         int[] a = arr.getArray();
+        ArrayChecker.arrayChecker(a);
         if (a.length != 0) {
             int leftIndex = 0;
             int rightIndex = a.length - 1;
