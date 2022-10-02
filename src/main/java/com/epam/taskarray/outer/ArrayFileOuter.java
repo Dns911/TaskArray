@@ -1,4 +1,4 @@
-package com.epam.taskarray.writer;
+package com.epam.taskarray.outer;
 
 import com.epam.taskarray.entity.CustomArray;
 import com.epam.taskarray.exception.ArrayException;
@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-public class ArrayFileWriter {
+public class ArrayFileOuter {
     public static String DEFAULT_OUT_FILE = "data\\res.txt";
 
     public void customArrayToFile(CustomArray customArray, String fileName, boolean append) {

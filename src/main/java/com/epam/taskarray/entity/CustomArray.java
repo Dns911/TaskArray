@@ -8,6 +8,16 @@ import java.util.Arrays;
 public class CustomArray {
     private int[] array;
 
+    public String getArrayName() {
+        return arrayName;
+    }
+
+    public void setArrayName(String arrayName) {
+        this.arrayName = arrayName;
+    }
+
+    private String arrayName;
+
     public CustomArray() {
     }
 
