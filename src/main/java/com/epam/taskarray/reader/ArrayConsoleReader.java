@@ -1,7 +1,7 @@
 package com.epam.taskarray.reader;
 
 import com.epam.taskarray.entity.CustomArray;
-import com.epam.taskarray.service.ArrayParser;
+import com.epam.taskarray.creator.ArrayParser;
 
 import java.util.Scanner;
 

@@ -1,13 +1,19 @@
 package com.epam.taskarray.service;
 
 import com.epam.taskarray.entity.CustomArray;
+import com.epam.taskarray.service.impl.ArrayServiceImpl;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 public class ArrayServiceTest {
-public ArrayService arrayService = new ArrayService();
+    public ArrayService arrayService = new ArrayServiceImpl();
+
+    @BeforeClass
+    public void beforeClass() {
+
+    }
+
     @Test
     public void testMinValue() {
         int expected = -7;

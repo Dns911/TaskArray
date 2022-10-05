@@ -1,10 +1,13 @@
 package com.epam.taskarray.main;
 
+import com.epam.taskarray.creator.ArrayListCreator;
 import com.epam.taskarray.entity.CustomArray;
 import com.epam.taskarray.reader.ArrayFileReader;
-import com.epam.taskarray.service.ArrayParser;
+import com.epam.taskarray.creator.ArrayParser;
+import com.epam.taskarray.repository.ArrayRepository;
 import com.epam.taskarray.service.ArrayService;
 import com.epam.taskarray.outer.ArrayFileOuter;
+import com.epam.taskarray.service.impl.ArrayServiceImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,28 +22,48 @@ import java.util.List;
 
 public class Main {
     static final Logger logger = LogManager.getLogger();
-    int minusTen(int n){
+
+    int minusTen(int n) {
         logger.log(Level.INFO, "");
         return n - 10;
     }
+
     public static void main(String[] args) {
         logger.log(Level.INFO, "Start:");
+//        ArrayFileReader arrayFileReader = new ArrayFileReader();
+//        ArrayParser arrayParser = new ArrayParser();
+//        ArrayList<String> listString = arrayFileReader.readFromFile("");
+//        System.out.println(listString);
+//        CustomArray customArray = ArrayParser.parseStringToCustomArray(listString.get(0));
+//        ArrayService arrayService = new ArrayServiceImpl();
+//        System.out.println(customArray);
+//
+//        System.out.println(arrayService.recursiveQuickSort(customArray));
+//
+//        System.out.println(customArray);
+//        ArrayFileOuter arrayFileOuter = new ArrayFileOuter();
+//        arrayFileOuter.customArrayToFile(customArray, "", false);
         ArrayFileReader arrayFileReader = new ArrayFileReader();
-        ArrayParser arrayParser = new ArrayParser();
-        ArrayList<String> listString = arrayFileReader.readFromFile("");
-        System.out.println(listString);
-        CustomArray customArray = ArrayParser.parseStringToCustomArray(listString.get(0));
-        ArrayService arrayService = new ArrayService();
-        System.out.println(customArray);
-
-        System.out.println(arrayService.recursiveQuickSort(customArray));
-
-        System.out.println(customArray);
-        ArrayFileOuter arrayFileOuter = new ArrayFileOuter();
-        arrayFileOuter.customArrayToFile(customArray, "", false);
+        ArrayListCreator arrayListCreator = new ArrayListCreator();
+        List<CustomArray> arrayList = arrayListCreator.getArrList(arrayFileReader.readFromFile(""));
+        System.out.println(arrayList);
+        ArrayRepository rep = ArrayRepository.getInstance();
+        rep.addList(arrayList);
+        System.out.println("   ");
+        System.out.println(rep);
+        ArrayRepository rep2 = ArrayRepository.getInstance();
+        rep2.add(arrayList.get(1));
+        System.out.println("   ");
+        System.out.println(rep2);
+        System.out.println("   ");
+        System.out.println("   ");
+        System.out.println(rep2.getAll());
+        System.out.println("  ");
+        rep2.removeByIndex(1);
+        System.out.println(rep);
     }
 
-    public static void fileSystem(){
+    public static void fileSystem() {
         File file = new File("data" + File.separator + "info.txt");
         if (file.exists() && file.isFile()) {
             System.out.println("Path " + file.getPath());
@@ -62,10 +85,10 @@ public class Main {
                 System.out.println(current.getPath() + "\t" + current.length() + "\t" + date);
             }
             File root = File.listRoots()[0];
-            System.out.printf("\n%s %,d from %,d free bytes", root.getPath(), root.getUsableSpace(),
-                    root.getTotalSpace());
+            System.out.printf("\n%s %,d from %,d free bytes", root.getPath(), root.getUsableSpace(), root.getTotalSpace());
         }
     }
+
     public static void outputArrayInStream(byte[] value) {
         try (FileOutputStream output = new FileOutputStream("data/out.txt", true)) {
             output.write(48);

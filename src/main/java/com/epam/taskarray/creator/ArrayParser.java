@@ -1,7 +1,7 @@
-package com.epam.taskarray.service;
+package com.epam.taskarray.creator;
 
 import com.epam.taskarray.entity.CustomArray;
-import com.epam.taskarray.validation.StringValidator;
+import com.epam.taskarray.validator.StringValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,4 +1,4 @@
-package com.epam.taskarray.service;
+package com.epam.taskarray.validator;
 
 public class ArrayChecker {
     public static void arrayChecker (int[] arr){

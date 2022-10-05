@@ -1,12 +1,26 @@
 package com.epam.taskarray.entity;
 
-import com.epam.taskarray.service.ArrayChecker;
+import com.epam.taskarray.validator.ArrayChecker;
 import com.epam.taskarray.exception.ArrayException;
 
 import java.util.Arrays;
 
 public class CustomArray {
     private int[] array;
+    private String arrayName;
+
+    public CustomArray(int[] array) {
+        this.array = array;
+        this.arrayName = "DEFAULT_NAME";
+    }
+
+    public CustomArray(int[] array, String arrayName) {
+        this.array = array;
+        this.arrayName = arrayName;
+    }
+
+    public CustomArray() {
+    }
 
     public String getArrayName() {
         return arrayName;
@@ -14,15 +28,6 @@ public class CustomArray {
 
     public void setArrayName(String arrayName) {
         this.arrayName = arrayName;
-    }
-
-    private String arrayName;
-
-    public CustomArray() {
-    }
-
-    public CustomArray(int[] array) {
-        this.array = array;
     }
 
     public int[] getArray() {
@@ -33,17 +38,17 @@ public class CustomArray {
         this.array = array;
     }
 
-    public int getElement (int index) throws ArrayException {
+    public int getElement(int index) throws ArrayException {
         ArrayChecker.arrayIndexChecker(array, index);
         return array[index];
     }
 
-    public void setElement (int value, int index) throws ArrayException {
+    public void setElement(int value, int index) throws ArrayException {
         ArrayChecker.arrayIndexChecker(array, index);
         array[index] = value;
     }
 
-    public int size(){
+    public int size() {
         return array.length;
     }
 
@@ -61,7 +66,7 @@ public class CustomArray {
 
     @Override
     public String toString() {
-        return "CustomArray{" +
+        return arrayName +
                 "array=" + Arrays.toString(array) +
                 '}';
     }
