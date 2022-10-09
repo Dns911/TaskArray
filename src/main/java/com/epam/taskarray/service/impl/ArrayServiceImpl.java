@@ -45,7 +45,7 @@ public class ArrayServiceImpl implements ArrayService {
         int[] a = arr.getArray();
         ArrayChecker.arrayChecker(a);
         int sum = 0;
-        for (int i = 1; i < a.length; i++){
+        for (int i = 0; i < a.length; i++){
             sum += a[i];
         }
         return (double) sum / a.length;
@@ -55,7 +55,7 @@ public class ArrayServiceImpl implements ArrayService {
         int[] a = arr.getArray();
         ArrayChecker.arrayChecker(a);
         int sum = 0;
-        for (int i = 1; i < a.length; i++){
+        for (int i = 0; i < a.length; i++){
             sum += a[i];
         }
         return sum;

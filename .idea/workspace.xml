@@ -5,21 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="054b8394-6ced-4f33-b95e-edef190d3ac7" name="Changes" comment="Ready2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/Singl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/entity/RepositoryCustomArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/validation/StringValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/taskarray/main/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/taskarray/service/ArrayServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/comparator/ArrayNameComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/main/Main2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/observer/ArrayObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/observer/impl/ArrayAvgMaxMinSumObserverImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/Specification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/impl/ArrayRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/predicate/ArrayBySumLessPredicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/specification/ArrayBySumLessSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/specification/ArrayBySumMoreSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/warehouse/ArrayParameters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/warehouse/Warehouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/info.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/Singl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/creator/ArrayListCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/creator/ArrayListCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/creator/ArrayParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/creator/ArrayParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/entity/CustomArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/entity/CustomArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/file/FileMain.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/outer/ArrayFileOuter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/outer/ArrayFileOuter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/reader/ArrayFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/ArrayParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/writer/ArrayFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/outer/ArrayFileOuter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/ArrayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/repository/ArrayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/impl/ArrayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/service/impl/ArrayServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/taskarray/service/ArrayServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/taskarray/observer/service/ArrayServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="TestNG Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,14 +79,48 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.epam.taskarray.repository" />
+      <recent name="com.epam.taskarray.service" />
+      <recent name="com.epam.taskarray.validation" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.epam.taskarray.service" />
       <recent name="com.epam.taskarray.main" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.epam.taskarray.repository.specification" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.ArrayServiceTest.testRecursiveQuickSort">
+  <component name="RunManager" selected="Application.Main2">
+    <configuration name="ArrMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.ArrMain" />
+      <module name="TaskArray" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.taskarray.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.main.Main" />
+      <module name="TaskArray" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.taskarray.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.main.Main2" />
       <module name="TaskArray" />
       <extension name="coverage">
         <pattern>
@@ -89,7 +136,7 @@
       <module name="TaskArray" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epam.taskarray.service.*" />
+          <option name="PATTERN" value="com.epam.taskarray.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,7 +153,7 @@
       <module name="TaskArray" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epam.taskarray.service.*" />
+          <option name="PATTERN" value="com.epam.taskarray.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,49 +167,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.testMinusTen" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TaskArray" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.taskarray.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.taskarray.main" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.main.MainTest" />
-      <option name="METHOD_NAME" value="testMinusTen" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.testMultiTen" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TaskArray" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.taskarray.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.taskarray.main" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.taskarray.main.MainTest" />
-      <option name="METHOD_NAME" value="testMultiTen" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main2" />
         <item itemvalue="TestNG.ArrayServiceTest.testRecursiveQuickSort" />
-        <item itemvalue="TestNG.ArrayServiceTest" />
+        <item itemvalue="Application.ArrMain" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="TestNG.MainTest.testMinusTen" />
-        <item itemvalue="TestNG.MainTest.testMultiTen" />
+        <item itemvalue="TestNG.ArrayServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664379290325</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ready2">
+      <created>1664748233113</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664748233113</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ready2">
+      <created>1664983939079</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664983939079</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

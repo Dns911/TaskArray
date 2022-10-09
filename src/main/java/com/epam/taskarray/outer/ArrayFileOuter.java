@@ -1,7 +1,6 @@
 package com.epam.taskarray.outer;
 
 import com.epam.taskarray.entity.CustomArray;
-import com.epam.taskarray.exception.ArrayException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,10 +8,9 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 public class ArrayFileOuter {
-    public static String DEFAULT_OUT_FILE = "data\\res.txt";
+    private static String DEFAULT_OUT_FILE = "data\\res.txt";
 
     public void customArrayToFile(CustomArray customArray, String fileName, boolean append) {
-        String str = null;
         File file = new File(fileName);
         if (!file.exists()) {
             file = new File(DEFAULT_OUT_FILE);
@@ -24,9 +22,6 @@ public class ArrayFileOuter {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (ArrayException e) {
-            e.printStackTrace();
         }
-
     }
 }

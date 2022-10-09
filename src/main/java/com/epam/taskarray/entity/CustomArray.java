@@ -1,13 +1,18 @@
 package com.epam.taskarray.entity;
 
+import com.epam.taskarray.observer.ArrayObserver;
+import com.epam.taskarray.observer.impl.ArrayAvgMaxMinSumObserverImpl;
 import com.epam.taskarray.validator.ArrayChecker;
-import com.epam.taskarray.exception.ArrayException;
 
 import java.util.Arrays;
+import java.util.StringJoiner;
+import java.util.UUID;
 
 public class CustomArray {
     private int[] array;
     private String arrayName;
+    private final UUID arrayId = UUID.randomUUID();
+    private final ArrayObserver observer = new ArrayAvgMaxMinSumObserverImpl();
 
     public CustomArray(int[] array) {
         this.array = array;
@@ -20,6 +25,10 @@ public class CustomArray {
     }
 
     public CustomArray() {
+    }
+
+    public UUID getArrayId() {
+        return arrayId;
     }
 
     public String getArrayName() {
@@ -35,15 +44,17 @@ public class CustomArray {
     }
 
     public void setArray(int[] array) {
+
         this.array = array;
+        notify(this);
     }
 
-    public int getElement(int index) throws ArrayException {
+    public int getElement(int index) {
         ArrayChecker.arrayIndexChecker(array, index);
         return array[index];
     }
 
-    public void setElement(int value, int index) throws ArrayException {
+    public void setElement(int value, int index) {
         ArrayChecker.arrayIndexChecker(array, index);
         array[index] = value;
     }
@@ -59,6 +70,10 @@ public class CustomArray {
         return Arrays.equals(array, that.array);
     }
 
+    private void notify(CustomArray arr) {
+        observer.updateArray(arr);
+    }
+
     @Override
     public int hashCode() {
         return Arrays.hashCode(array);
@@ -66,8 +81,9 @@ public class CustomArray {
 
     @Override
     public String toString() {
-        return arrayName +
-                "array=" + Arrays.toString(array) +
-                '}';
+        return new StringJoiner(", ", " " + "[", "]")
+                .add("CustomArrayName=<" + arrayName + ">")
+                .add("numbers=" + Arrays.toString(array))
+                .toString();
     }
 }

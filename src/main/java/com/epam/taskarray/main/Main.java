@@ -2,12 +2,11 @@ package com.epam.taskarray.main;
 
 import com.epam.taskarray.creator.ArrayListCreator;
 import com.epam.taskarray.entity.CustomArray;
+import com.epam.taskarray.exception.ArrayException;
 import com.epam.taskarray.reader.ArrayFileReader;
-import com.epam.taskarray.creator.ArrayParser;
 import com.epam.taskarray.repository.ArrayRepository;
-import com.epam.taskarray.service.ArrayService;
-import com.epam.taskarray.outer.ArrayFileOuter;
-import com.epam.taskarray.service.impl.ArrayServiceImpl;
+import com.epam.taskarray.repository.impl.ArrayRepositoryImpl;
+import com.epam.taskarray.warehouse.Warehouse;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +16,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Main {
     static final Logger logger = LogManager.getLogger();
@@ -28,7 +27,7 @@ public class Main {
         return n - 10;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArrayException {
         logger.log(Level.INFO, "Start:");
 //        ArrayFileReader arrayFileReader = new ArrayFileReader();
 //        ArrayParser arrayParser = new ArrayParser();
@@ -47,20 +46,22 @@ public class Main {
         ArrayListCreator arrayListCreator = new ArrayListCreator();
         List<CustomArray> arrayList = arrayListCreator.getArrList(arrayFileReader.readFromFile(""));
         System.out.println(arrayList);
-        ArrayRepository rep = ArrayRepository.getInstance();
+        ArrayRepository rep = ArrayRepositoryImpl.getInstance();
         rep.addList(arrayList);
         System.out.println("   ");
         System.out.println(rep);
-        ArrayRepository rep2 = ArrayRepository.getInstance();
+        ArrayRepository rep2 = ArrayRepositoryImpl.getInstance();
         rep2.add(arrayList.get(1));
         System.out.println("   ");
         System.out.println(rep2);
         System.out.println("   ");
         System.out.println("   ");
-        System.out.println(rep2.getAll());
         System.out.println("  ");
         rep2.removeByIndex(1);
         System.out.println(rep);
+        StringJoiner joiner = new StringJoiner("--")
+                .add("**" + arrayList + "000");
+        System.out.println(joiner);
     }
 
     public static void fileSystem() {

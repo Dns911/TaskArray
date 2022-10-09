@@ -2,55 +2,23 @@ package com.epam.taskarray.repository;
 
 import com.epam.taskarray.entity.CustomArray;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
 
-public class ArrayRepository {
-    private static ArrayRepository arrRepInstance;
-    private List<CustomArray> repository;
+public interface ArrayRepository {
+    void add(CustomArray arr);
 
-    private ArrayRepository() {
-        repository = new ArrayList<>();
-    }
-    public static ArrayRepository getInstance() {
-        if (arrRepInstance == null) {
-            arrRepInstance = new ArrayRepository();
-        }
-        return arrRepInstance;
-    }
-    public List<CustomArray> getRepository() {
-        return repository;
-    }
+    void addList(List<CustomArray> arrList);
 
+    void removeByIndex(int index);
 
-    public void add (CustomArray arr){
-        repository.add(arr);
-    }
+    void updateByIndex(int index, CustomArray newArray);
 
-    public void addList (List<CustomArray> arrList){
-        for (CustomArray customArr:
-             arrList) {
-            repository.add(customArr);
-        }
-    }
+    List<CustomArray> query(Specification specification);
+    List<CustomArray> queryLambda(Specification specification);
 
-    public ArrayRepository getAll(){
-        return arrRepInstance;
-    }
-
-    public void removeByIndex (int index){
-        this.repository.remove(index);
-    }
-
-    public void updateByIndex (int index, CustomArray newArray){
-        this.repository.remove(index);
-        this.repository.add(index, newArray);
-    }
+    void sort(Comparator<CustomArray> comparator);
 
     @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Repository CustomArray{");
-        sb.append("rep=").append(repository);
-        sb.append('}');
-        return sb.toString();
-    }
+    String toString();
 }
